@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-<!-- saved from url=(0046)file:///C:/Users/juyeon/Downloads/index_1.html -->
-<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>중등 홈런 종합 대시보드</title>
 <!-- Google tag (gtag.js) -->
-<script async="" src="./중등 홈런 종합 대시보드_files/js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2YCGEZCBWD"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-2YCGEZCBWD');
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com/">
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-<link href="./중등 홈런 종합 대시보드_files/css2" rel="stylesheet" media="print" onload="this.media=&#39;all&#39;">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Nanum+Square+AC:wght@400;700;800;900&display=swap" rel="stylesheet"></noscript>
-<script src="./중등 홈런 종합 대시보드_files/chart.umd.min.js.다운로드"></script>
-<script src="./중등 홈런 종합 대시보드_files/chartjs-plugin-datalabels.min.js.다운로드"></script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareAC.css" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareAC.css" rel="stylesheet"></noscript>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
 <style>
 :root {
   --bg: #F7F9FC;
@@ -34,8 +33,8 @@
   --yellow: #d97706;
   --red: #dc2626;
   --purple: #7c3aed;
-  --font-ko: 'Nanum Square AC', sans-serif;
-  --font-en: 'Nanum Square AC', sans-serif;
+  --font-ko: 'NanumSquareAC', sans-serif;
+  --font-en: 'NanumSquareAC', sans-serif;
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 14px;
@@ -340,11 +339,11 @@ tbody tr:hover { background: var(--surface2); transition: background .1s; }
 </div>
 
 <div class="tab-bar">
-  <button class="tab-btn active" onclick="showTab(&#39;compare&#39;)">🔀 초등 vs 중등 비교</button>
-  <button class="tab-btn" onclick="showTab(&#39;overview&#39;)">📊 중등 종합 개요</button>
-  <button class="tab-btn" onclick="showTab(&#39;churnreason&#39;)">🎯 해지 사유 분석</button>
-  <button class="tab-btn" onclick="showTab(&#39;survey&#39;)">📋 학부모 설문 결과</button>
-  <button class="tab-btn" onclick="showTab(&#39;interview&#39;)">🎙️ 선생님 인터뷰</button>
+  <button class="tab-btn active" onclick="showTab('compare')">🔀 초등 vs 중등 비교</button>
+  <button class="tab-btn" onclick="showTab('overview')">📊 중등 종합 개요</button>
+  <button class="tab-btn" onclick="showTab('churnreason')">🎯 해지 사유 분석</button>
+  <button class="tab-btn" onclick="showTab('survey')">📋 학부모 설문 결과</button>
+  <button class="tab-btn" onclick="showTab('interview')">🎙️ 선생님 인터뷰</button>
 </div>
 
 <div class="content">
@@ -428,18 +427,18 @@ tbody tr:hover { background: var(--surface2); transition: background .1s; }
         <div class="legend-item"><div class="legend-swatch" style="background:var(--orange)"></div>초등</div>
         <div class="legend-item"><div class="legend-swatch" style="background:var(--blue)"></div>중등</div>
       </div>
-      <div class="chart-wrap h260"><canvas id="cmp-perf" role="img" aria-label="cmp-perf chart" width="630" height="260" style="display: block; box-sizing: border-box; height: 260px; width: 630px;"></canvas></div>
+      <div class="chart-wrap h260"><canvas id="cmp-perf" role="img" aria-label="cmp-perf chart"></canvas></div>
     </div>
     <div class="card">
       <div class="card-title">출석률 · 학습시간 월별 추이 비교</div>
-      <div class="card-sub">출석률 &amp; 월평균 학습시간(÷10) · 초등 vs 중등</div>
+      <div class="card-sub">출석률 & 월평균 학습시간(÷10) · 초등 vs 중등</div>
       <div class="legend">
         <div class="legend-item"><div class="legend-swatch" style="background:var(--orange)"></div>초등 출석률</div>
         <div class="legend-item"><div class="legend-swatch" style="background:var(--blue)"></div>중등 출석률</div>
         <div class="legend-item"><div class="legend-swatch" style="background:var(--orange);opacity:0.4"></div>초등 학습시간÷10</div>
         <div class="legend-item"><div class="legend-swatch" style="background:var(--blue);opacity:0.4"></div>중등 학습시간÷10</div>
       </div>
-      <div class="chart-wrap h260"><canvas id="cmp-att-time" role="img" aria-label="cmp-att-time chart" width="630" height="260" style="display: block; box-sizing: border-box; height: 260px; width: 630px;"></canvas></div>
+      <div class="chart-wrap h260"><canvas id="cmp-att-time" role="img" aria-label="cmp-att-time chart"></canvas></div>
     </div>
   </div>
 
@@ -447,12 +446,12 @@ tbody tr:hover { background: var(--surface2); transition: background .1s; }
     <div class="card">
       <div class="card-title">수행률 구간 분포 비교</div>
       <div class="card-sub">레코드 비율 기준 · 초등 vs 중등</div>
-      <div class="chart-wrap h260"><canvas id="cmp-dist" role="img" aria-label="cmp-dist chart" width="630" height="260" style="display: block; box-sizing: border-box; height: 260px; width: 630px;"></canvas></div>
+      <div class="chart-wrap h260"><canvas id="cmp-dist" role="img" aria-label="cmp-dist chart"></canvas></div>
     </div>
     <div class="card">
       <div class="card-title">주요 지표 레이더 비교</div>
       <div class="card-sub">5개 지표 종합 프로파일 · 100점 기준 정규화</div>
-      <div class="chart-wrap h260"><canvas id="cmp-radar" role="img" aria-label="cmp-radar chart" width="630" height="260" style="display: block; box-sizing: border-box; height: 260px; width: 630px;"></canvas></div>
+      <div class="chart-wrap h260"><canvas id="cmp-radar" role="img" aria-label="cmp-radar chart"></canvas></div>
     </div>
   </div>
 
@@ -496,12 +495,12 @@ tbody tr:hover { background: var(--surface2); transition: background .1s; }
     <div class="card">
       <div class="card-title">상관계수 비교 — 초등</div>
       <div class="card-sub">Pearson r · 수행률 기준 4개 지표</div>
-      <div class="chart-wrap h220"><canvas id="cmp-corr-elem" role="img" aria-label="cmp-corr-elem chart" width="630" height="220" style="display: block; box-sizing: border-box; height: 220px; width: 630px;"></canvas></div>
+      <div class="chart-wrap h220"><canvas id="cmp-corr-elem" role="img" aria-label="cmp-corr-elem chart"></canvas></div>
     </div>
     <div class="card">
       <div class="card-title">상관계수 비교 — 중등</div>
       <div class="card-sub">스스로학습 상관 r=0.034 — 중등 자기주도학습 수행률과 거의 무관</div>
-      <div class="chart-wrap h220"><canvas id="cmp-corr-mid" role="img" aria-label="cmp-corr-mid chart" width="630" height="220" style="display: block; box-sizing: border-box; height: 220px; width: 630px;"></canvas></div>
+      <div class="chart-wrap h220"><canvas id="cmp-corr-mid" role="img" aria-label="cmp-corr-mid chart"></canvas></div>
     </div>
   </div>
 
@@ -524,7 +523,7 @@ tbody tr:hover { background: var(--surface2); transition: background .1s; }
         <div class="legend-item"><div class="legend-swatch" style="background:var(--blue);border-radius:3px;width:24px;height:4px;"></div><span>중등 <strong style="color:var(--blue)">연평균 23.7%</strong></span></div>
       </div>
     </div>
-    <div class="chart-wrap h360"><canvas id="cmp-zero-monthly" role="img" aria-label="월별 미학습 비율 비교 차트" width="720" height="360" style="display: block; box-sizing: border-box; height: 360px; width: 720px;"></canvas></div>
+    <div class="chart-wrap h360"><canvas id="cmp-zero-monthly" role="img" aria-label="월별 미학습 비율 비교 차트"></canvas></div>
     <div style="display:flex;justify-content:space-between;margin-top:10px;padding:10px 4px 0;border-top:1px solid var(--border);font-size:11px;color:var(--muted);">
       <span>초등 : 연말 누적형 · 12월 최고 <strong style="color:var(--orange)">13.7%</strong></span>
       <span>중등 : 방학 급등형 · 7월 최고 <strong style="color:var(--blue)">31.5%</strong></span>
@@ -1549,6 +1548,5 @@ function buildSurvey(){
   });
 }
 </script>
-
-
-</body></html>
+</body>
+</html>
