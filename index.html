@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<!-- saved from url=(0047)file:///C:/Users/juyeon/Downloads/index_13.html -->
+<!-- saved from url=(0196)file:///C:/Users/juyeon/Downloads/%EC%A4%91%EB%93%B1_%ED%99%88%EB%9F%B0_%EC%A2%85%ED%95%A9_%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C_260421_%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%ED%8F%AC%ED%95%A8_1.html -->
 <html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>중등 홈런 종합 대시보드</title>
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-<link href="./중등 홈런 종합 대시보드_260421_files/css2" rel="stylesheet" media="print" onload="this.media=&#39;all&#39;">
+<link href="file:///C:/Users/juyeon/Downloads/%EC%A4%91%EB%93%B1%20%ED%99%88%EB%9F%B0%20%EC%A2%85%ED%95%A9%20%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C_260421_files/css2" rel="stylesheet" media="print" onload="this.media=&#39;all&#39;">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Nanum+Square+AC:wght@400;700;800;900&display=swap" rel="stylesheet"></noscript>
-<script src="./중등 홈런 종합 대시보드_260421_files/chart.umd.min.js.다운로드"></script>
-<script src="./중등 홈런 종합 대시보드_260421_files/chartjs-plugin-datalabels.min.js.다운로드"></script>
+<script src="./중등 홈런 종합 대시보드_files/chart.umd.min.js.다운로드"></script>
+<script src="./중등 홈런 종합 대시보드_files/chartjs-plugin-datalabels.min.js.다운로드"></script>
 <style>
 :root {
   --bg: #F7F9FC;
@@ -111,7 +111,7 @@ body { font-family: var(--font-ko); background: var(--bg); color: var(--text); m
 .kpi {
   background: var(--surface); border: 1px solid var(--border);
   border-radius: var(--radius-md); padding: 16px 18px;
-  position: relative; overflow: hidden;
+  position: relative; overflow: visible;
   display: flex; flex-direction: column;
   transition: box-shadow .2s, transform .2s;
 }
@@ -246,17 +246,13 @@ tbody tr:hover { background: var(--surface2); transition: background .1s; }
 .tip-box {
   visibility: hidden; opacity: 0;
   position: absolute; z-index: 9999;
-  bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%);
-  background: #FFFFFF; border: 1px solid rgba(0,0,0,0.12);
-  color: var(--text); font-size: 11px; line-height: 1.6;
-  padding: 8px 12px; border-radius: var(--radius-sm);
-  width: 220px; white-space: normal;
-  pointer-events: none; transition: opacity 0.15s;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-}
-.tip-box::after {
-  content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
-  border: 5px solid transparent; border-top-color: #FFFFFF;
+  bottom: calc(100% + 8px); left: 0; transform: none;
+  background: #FFFFFF; border: 1px solid rgba(0,0,0,0.15);
+  color: #1a1d23; font-size: 12px; line-height: 1.65;
+  padding: 10px 14px; border-radius: 7px;
+  width: 260px; white-space: normal; word-break: keep-all;
+  pointer-events: none; transition: opacity 0.12s;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.13);
 }
 .has-tip:hover .tip-box { visibility: visible; opacity: 1; }
 
@@ -332,17 +328,18 @@ tbody tr:hover { background: var(--surface2); transition: background .1s; }
 </div>
 
 <div class="tab-bar">
-  <button class="tab-btn active" onclick="showTab(&#39;intro&#39;)">📋 조사 개요</button>
+  <button class="tab-btn" onclick="showTab(&#39;intro&#39;)">📋 조사 개요</button>
   <button class="tab-btn" onclick="showTab(&#39;compare&#39;)">🔀 초등 vs 중등 비교</button>
   <button class="tab-btn" onclick="showTab(&#39;overview&#39;)">📊 중등 종합 개요</button>
   <button class="tab-btn" onclick="showTab(&#39;churnreason&#39;)">🎯 해지 사유 분석</button>
   <button class="tab-btn" onclick="showTab(&#39;survey&#39;)">📋 학부모 설문 결과</button>
-  <button class="tab-btn" onclick="showTab(&#39;interview&#39;)">🎙️ 선생님 인터뷰</button>
+  <button class="tab-btn active" onclick="showTab(&#39;interview&#39;)">🎙️ 선생님 인터뷰</button>
+
 </div>
 
 <div class="content">
 
-<div class="tab-panel active" id="tab-intro">
+<div class="tab-panel" id="tab-intro">
 
   <div style="background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 28px;margin-bottom:24px;">
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
@@ -460,7 +457,7 @@ tbody tr:hover { background: var(--surface2); transition: background .1s; }
       </div>
     </div>
     <div class="cmp-kpi" style="--ck-color:var(--yellow)">
-      <div class="kpi-label"><span class="has-tip">평균 학습시간<span class="tip-box">월 총 학습시간(분)의 단순 평균.<br>헤비유저가 평균을 끌어올려 왜곡 가능.<br>중앙값이 더 실제에 가까움.</span></span></div>
+      <div class="kpi-label"><span class="has-tip">평균 학습시간<span class="tip-box">레코드(학생×월) 기준 단순 평균.<br>재적 기간 중 월평균이며, 0분 포함.<br>헤비유저 왜곡으로 중앙값이 더 실제에 가까움.</span></span></div>
       <div class="cmp-row">
         <div class="cmp-item"><div class="cmp-item-label" style="color:var(--orange)">초등</div><div class="cmp-item-val" style="color:var(--orange)">901<span style="font-size:12px;color:var(--muted)">분</span></div></div>
         <div class="cmp-vs">vs</div>
@@ -508,18 +505,18 @@ tbody tr:hover { background: var(--surface2); transition: background .1s; }
         <div class="legend-item"><div class="legend-swatch" style="background:var(--orange)"></div>초등</div>
         <div class="legend-item"><div class="legend-swatch" style="background:var(--blue)"></div>중등</div>
       </div>
-      <div class="chart-wrap h260"><canvas id="cmp-perf" role="img" aria-label="cmp-perf chart" width="1103" height="455" style="display: block; box-sizing: border-box; height: 260px; width: 630px;"></canvas></div>
+      <div class="chart-wrap h260"><canvas id="cmp-perf" role="img" aria-label="cmp-perf chart" width="0" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;"></canvas></div>
     </div>
     <div class="card">
       <div class="card-title">출석률 · 학습시간 월별 추이 비교</div>
-      <div class="card-sub">출석률 &amp; 월평균 학습시간(÷10) · 초등 vs 중등</div>
+      <div class="card-sub">출석률(좌축, %) &amp; 월평균 학습시간(우축, 분) · 초등 vs 중등</div>
       <div class="legend">
         <div class="legend-item"><div class="legend-swatch" style="background:var(--orange)"></div>초등 출석률</div>
         <div class="legend-item"><div class="legend-swatch" style="background:var(--blue)"></div>중등 출석률</div>
-        <div class="legend-item"><div class="legend-swatch" style="background:var(--orange);opacity:0.4"></div>초등 학습시간÷10</div>
-        <div class="legend-item"><div class="legend-swatch" style="background:var(--blue);opacity:0.4"></div>중등 학습시간÷10</div>
+        <div class="legend-item"><div class="legend-swatch" style="background:var(--orange);opacity:0.4"></div>초등 학습시간</div>
+        <div class="legend-item"><div class="legend-swatch" style="background:var(--blue);opacity:0.4"></div>중등 학습시간</div>
       </div>
-      <div class="chart-wrap h260"><canvas id="cmp-att-time" role="img" aria-label="cmp-att-time chart" width="1103" height="455" style="display: block; box-sizing: border-box; height: 260px; width: 630px;"></canvas></div>
+      <div class="chart-wrap h260"><canvas id="cmp-att-time" role="img" aria-label="cmp-att-time chart" width="0" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;"></canvas></div>
     </div>
   </div>
 
@@ -527,12 +524,12 @@ tbody tr:hover { background: var(--surface2); transition: background .1s; }
     <div class="card">
       <div class="card-title">수행률 구간 분포 비교</div>
       <div class="card-sub">레코드 비율 기준 · 초등 vs 중등</div>
-      <div class="chart-wrap h260"><canvas id="cmp-dist" role="img" aria-label="cmp-dist chart" width="1103" height="455" style="display: block; box-sizing: border-box; height: 260px; width: 630px;"></canvas></div>
+      <div class="chart-wrap h260"><canvas id="cmp-dist" role="img" aria-label="cmp-dist chart" width="0" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;"></canvas></div>
     </div>
     <div class="card">
       <div class="card-title">주요 지표 레이더 비교</div>
       <div class="card-sub">5개 지표 종합 프로파일 · 100점 기준 정규화</div>
-      <div class="chart-wrap h260"><canvas id="cmp-radar" role="img" aria-label="cmp-radar chart" width="1103" height="455" style="display: block; box-sizing: border-box; height: 260px; width: 630px;"></canvas></div>
+      <div class="chart-wrap h260"><canvas id="cmp-radar" role="img" aria-label="cmp-radar chart" width="0" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;"></canvas></div>
     </div>
   </div>
 
@@ -572,23 +569,6 @@ tbody tr:hover { background: var(--surface2); transition: background .1s; }
     </div>
   </div>
 
-  <div class="chart-grid chart-grid-2">
-    <div class="card">
-      <div class="card-title">상관계수 비교 — 초등</div>
-      <div class="card-sub">Pearson r · 수행률 기준 4개 지표</div>
-      <div class="chart-wrap h220"><canvas id="cmp-corr-elem" role="img" aria-label="cmp-corr-elem chart" width="1103" height="385" style="display: block; box-sizing: border-box; height: 220px; width: 630px;"></canvas></div>
-    </div>
-    <div class="card">
-      <div class="card-title">상관계수 비교 — 중등</div>
-      <div class="card-sub">스스로학습 상관 r=0.034 — 중등 자기주도학습 수행률과 거의 무관</div>
-      <div class="chart-wrap h220"><canvas id="cmp-corr-mid" role="img" aria-label="cmp-corr-mid chart" width="1103" height="385" style="display: block; box-sizing: border-box; height: 220px; width: 630px;"></canvas></div>
-    </div>
-  </div>
-
-  <div class="insight-grid">
-    
-  </div>
-
   <div class="divider"></div>
   <div class="section-title" style="margin-bottom:4px;"><div class="bar"></div>월별 0분 미학습자 비율 비교</div>
   <div class="section-sub">학습시간 0분 레코드 비율 · 초등 vs 중등 · 2025.01–12</div>
@@ -604,7 +584,7 @@ tbody tr:hover { background: var(--surface2); transition: background .1s; }
         <div class="legend-item"><div class="legend-swatch" style="background:var(--blue);border-radius:3px;width:24px;height:4px;"></div><span>중등 <strong style="color:var(--blue)">연평균 23.7%</strong></span></div>
       </div>
     </div>
-    <div class="chart-wrap h360"><canvas id="cmp-zero-monthly" role="img" aria-label="월별 미학습 비율 비교 차트" width="1260" height="630" style="display: block; box-sizing: border-box; height: 360px; width: 720px;"></canvas></div>
+    <div class="chart-wrap h360"><canvas id="cmp-zero-monthly" role="img" aria-label="월별 미학습 비율 비교 차트" width="0" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;"></canvas></div>
     <div style="display:flex;justify-content:space-between;margin-top:10px;padding:10px 4px 0;border-top:1px solid var(--border);font-size:11px;color:var(--muted);">
       <span>초등 : 연말 누적형 · 12월 최고 <strong style="color:var(--orange)">13.7%</strong></span>
       <span>중등 : 방학 급등형 · 7월 최고 <strong style="color:var(--blue)">31.5%</strong></span>
@@ -642,7 +622,7 @@ tbody tr:hover { background: var(--surface2); transition: background .1s; }
   <div class="kpi-grid">
     <div class="kpi" style="--kpi-color:var(--red);--kpi-text:var(--red)"><div class="kpi-label"><span class="has-tip">중등 수행률<span class="tip-box">중등 전체 204,750건 레코드의 수행률 단순 평균.<br>완료된학습수 ÷ 계획된학습수 × 100.</span></span></div><div class="kpi-value">50.7<span class="kpi-unit">%</span></div><div class="kpi-delta down">▼ 20.7%p vs 초등(71.0%)</div></div>
     <div class="kpi" style="--kpi-color:var(--red);--kpi-text:var(--red)"><div class="kpi-label"><span class="has-tip">중등 출석률<span class="tip-box">중등 월별 레코드의 출석률 단순 평균.<br>해당 월에 1회 이상 학습한 날 비율.</span></span></div><div class="kpi-value">46.5<span class="kpi-unit">%</span></div><div class="kpi-delta down">▼ 24.7%p vs 초등(71.5%)</div></div>
-    <div class="kpi" style="--kpi-color:var(--yellow);--kpi-text:var(--yellow)"><div class="kpi-label"><span class="has-tip">월평균 학습시간<span class="tip-box">중등 월별 학습시간(분)의 단순 평균.<br>0분 포함 전체 기준. 중앙값은 345분으로 평균보다 낮음.</span></span></div><div class="kpi-value">614<span class="kpi-unit">분</span></div><div class="kpi-delta down">▼ 31.8% vs 초등(901분)</div></div>
+    <div class="kpi" style="--kpi-color:var(--yellow);--kpi-text:var(--yellow)"><div class="kpi-label"><span class="has-tip">월평균 학습시간<span class="tip-box">레코드(학생×월) 기준 단순 평균.<br>재적 기간 중 월평균이며, 0분 포함 전체 기준. 중앙값은 345분으로 평균보다 낮음.</span></span></div><div class="kpi-value">614<span class="kpi-unit">분</span></div><div class="kpi-delta down">▼ 31.8% vs 초등(901분)</div></div>
     <div class="kpi" style="--kpi-color:var(--red);--kpi-text:var(--red)"><div class="kpi-label"><span class="has-tip">최저 수행률 (12월)<span class="tip-box">연중 수행률이 가장 낮은 달.<br>12월 신규 전환생 대거 유입으로 전체 평균 최저점 도달.</span></span></div><div class="kpi-value">41.2<span class="kpi-unit">%</span></div><div class="kpi-delta down">▼ 연간 최저점</div></div>
     <div class="kpi" style="--kpi-color:var(--green)"><div class="kpi-label"><span class="has-tip">개별 학습시간 중앙값<span class="tip-box">학생별 월 학습시간의 중앙값(50%ile).<br>평균(614분) 대비 낮은 345분 — 헤비유저 왜곡 제거한 실제 대표값.</span></span></div><div class="kpi-value">345<span class="kpi-unit">분</span></div><div class="kpi-delta warn">평균 614분 — 헤비유저 왜곡</div></div>
   </div>
@@ -652,8 +632,8 @@ tbody tr:hover { background: var(--surface2); transition: background .1s; }
     <div class="kpi" style="--kpi-color:var(--blue)"><div class="kpi-label"><span class="has-tip">60분 미만<span class="tip-box">해당 월 학습시간 1~59분인 레코드 비율.<br>학습은 했지만 사실상 미이용 수준.</span></span></div><div class="kpi-value">6.0<span class="kpi-unit">%</span></div><div class="kpi-delta warn">월평균 · 평균 수행률 20.6%</div></div>
   </div>
   <div class="chart-grid chart-grid-2">
-    <div class="card"><div class="card-title">초등 vs 중등 지표 레이더</div><div class="card-sub">연평균 기준 · 5개 핵심 지표</div><div class="chart-wrap h300"><canvas id="overviewRadar" role="img" aria-label="overviewRadar chart" width="1103" height="525" style="display: block; box-sizing: border-box; height: 300px; width: 630px;"></canvas></div></div>
-    <div class="card"><div class="card-title">중등 월별 수행률 · 출석률 추이</div><div class="card-sub">2025.01~12 · 개별 학생 데이터 기준</div><div class="chart-wrap h300"><canvas id="overviewMonthly" role="img" aria-label="overviewMonthly chart" width="1103" height="525" style="display: block; box-sizing: border-box; height: 300px; width: 630px;"></canvas></div></div>
+    <div class="card"><div class="card-title">초등 vs 중등 지표 레이더</div><div class="card-sub">연평균 기준 · 5개 핵심 지표</div><div class="chart-wrap h300"><canvas id="overviewRadar" role="img" aria-label="overviewRadar chart" width="0" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;"></canvas></div></div>
+    <div class="card"><div class="card-title">중등 월별 수행률 · 출석률 추이</div><div class="card-sub">2025.01~12 · 개별 학생 데이터 기준</div><div class="chart-wrap h300"><canvas id="overviewMonthly" role="img" aria-label="overviewMonthly chart" width="0" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;"></canvas></div></div>
   </div>
   <div class="insight-grid">
     
@@ -704,12 +684,12 @@ tbody tr:hover { background: var(--surface2); transition: background .1s; }
     <div class="card">
       <div class="card-title">해지 사유 소분류 top5</div>
       <div class="card-sub">실질해지 3,912건 기준 · 졸업만료·중복결제 제외</div>
-      <div class="chart-wrap h300"><canvas id="cr-reason-bar" role="img" aria-label="cr-reason-bar chart" width="1103" height="525" style="display: block; box-sizing: border-box; height: 300px; width: 630px;"></canvas></div>
+      <div class="chart-wrap h300"><canvas id="cr-reason-bar" role="img" aria-label="cr-reason-bar chart" width="0" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;"></canvas></div>
     </div>
     <div class="card">
       <div class="card-title">학년별 해지 분포 (7~9학년)</div>
       <div class="card-sub">실질해지 기준 · 중1이 46.8% 집중</div>
-      <div class="chart-wrap h260"><canvas id="cr-grade-donut" role="img" aria-label="cr-grade-donut chart" width="1103" height="455" style="display: block; box-sizing: border-box; height: 260px; width: 630px;"></canvas></div>
+      <div class="chart-wrap h260"><canvas id="cr-grade-donut" role="img" aria-label="cr-grade-donut chart" width="0" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;"></canvas></div>
     </div>
   </div>
 
@@ -726,7 +706,7 @@ tbody tr:hover { background: var(--surface2); transition: background .1s; }
     <div class="card">
       <div class="card-title">학년별 1위 해지 사유 비교</div>
       <div class="card-sub">중1·중2는 학원 전환 1위 / 중3은 미학습 1위 — 완전 포기</div>
-      <div class="chart-wrap h260"><canvas id="cr-grade-reason" role="img" aria-label="cr-grade-reason chart" width="1103" height="455" style="display: block; box-sizing: border-box; height: 260px; width: 630px;"></canvas></div>
+      <div class="chart-wrap h260"><canvas id="cr-grade-reason" role="img" aria-label="cr-grade-reason chart" width="0" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;"></canvas></div>
     </div>
     
  
@@ -782,19 +762,19 @@ tbody tr:hover { background: var(--surface2); transition: background .1s; }
         <div class="legend-item"><div class="legend-swatch" style="background:var(--blue)"></div>학원 병행</div>
         <div class="legend-item"><div class="legend-swatch" style="background:var(--green)"></div>홈런 Only</div>
       </div>
-      <div class="chart-wrap h260"><canvas id="sv-q6" role="img" aria-label="Q6 chart" width="702" height="455" style="display: block; box-sizing: border-box; height: 260px; width: 401px;"></canvas></div>
+      <div class="chart-wrap h260"><canvas id="sv-q6" role="img" aria-label="Q6 chart" width="0" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;"></canvas></div>
     </div>
     <!-- Q7 -->
     <div class="card">
       <div class="card-title">Q7. 홈런이 밀릴 때 대처 방식</div>
       <div class="card-sub">자녀 자율 vs 당일완료 지도가 70% 차지</div>
-      <div class="chart-wrap h260"><canvas id="sv-q7" role="img" aria-label="Q7 chart" width="702" height="455" style="display: block; box-sizing: border-box; height: 260px; width: 401px;"></canvas></div>
+      <div class="chart-wrap h260"><canvas id="sv-q7" role="img" aria-label="Q7 chart" width="0" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;"></canvas></div>
     </div>
     <!-- Q8 -->
     <div class="card">
       <div class="card-title">Q8. 중등 전환 후 적응 힘든 점 (복수응답)</div>
       <div class="card-sub">집중력 저하 1위 · 심리적 압박감 2위</div>
-      <div class="chart-wrap h260"><canvas id="sv-q8" role="img" aria-label="Q8 chart" width="702" height="455" style="display: block; box-sizing: border-box; height: 260px; width: 401px;"></canvas></div>
+      <div class="chart-wrap h260"><canvas id="sv-q8" role="img" aria-label="Q8 chart" width="0" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;"></canvas></div>
     </div>
   </div>
 
@@ -850,19 +830,19 @@ tbody tr:hover { background: var(--surface2); transition: background .1s; }
     <div class="card">
       <div class="card-title">Q13. AI 생활기록부 인지 여부</div>
       <div class="card-sub">인지율 69% · 모름 31%</div>
-      <div class="chart-wrap h260"><canvas id="sv-q13" role="img" aria-label="Q13 chart" width="702" height="455" style="display: block; box-sizing: border-box; height: 260px; width: 401px;"></canvas></div>
+      <div class="chart-wrap h260"><canvas id="sv-q13" role="img" aria-label="Q13 chart" width="0" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;"></canvas></div>
     </div>
     <!-- Q14 확인 빈도 도넛 -->
     <div class="card">
       <div class="card-title">Q14. AI 리포트 확인 빈도</div>
       <div class="card-sub">거의 미확인 + 존재 몰랐음 = 절반 이상</div>
-      <div class="chart-wrap h260"><canvas id="sv-q14" role="img" aria-label="Q14 chart" width="702" height="455" style="display: block; box-sizing: border-box; height: 260px; width: 401px;"></canvas></div>
+      <div class="chart-wrap h260"><canvas id="sv-q14" role="img" aria-label="Q14 chart" width="0" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;"></canvas></div>
     </div>
     <!-- Q15 미확인 사유 -->
     <div class="card">
       <div class="card-title">Q15. AI 리포트 자주 확인하지 않는 이유</div>
       <div class="card-sub">선생님 대체 인식이 가장 큰 장벽</div>
-      <div class="chart-wrap h260"><canvas id="sv-q15" role="img" aria-label="Q15 chart" width="702" height="455" style="display: block; box-sizing: border-box; height: 260px; width: 401px;"></canvas></div>
+      <div class="chart-wrap h260"><canvas id="sv-q15" role="img" aria-label="Q15 chart" width="0" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;"></canvas></div>
     </div>
   </div>
 
@@ -875,7 +855,7 @@ tbody tr:hover { background: var(--surface2); transition: background .1s; }
         <div class="legend-item"><div class="legend-swatch" style="background:var(--blue)"></div>학원 병행</div>
         <div class="legend-item"><div class="legend-swatch" style="background:var(--green)"></div>홈런 Only</div>
       </div>
-      <div class="chart-wrap h260"><canvas id="sv-q14b" role="img" aria-label="Q14b chart" width="1103" height="455" style="display: block; box-sizing: border-box; height: 260px; width: 630px;"></canvas></div>
+      <div class="chart-wrap h260"><canvas id="sv-q14b" role="img" aria-label="Q14b chart" width="0" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;"></canvas></div>
     </div>
     <!-- Q18 희망 빈도 비교 -->
     <div class="card">
@@ -885,7 +865,7 @@ tbody tr:hover { background: var(--surface2); transition: background .1s; }
         <div class="legend-item"><div class="legend-swatch" style="background:var(--blue)"></div>학원 병행</div>
         <div class="legend-item"><div class="legend-swatch" style="background:var(--green)"></div>홈런 Only</div>
       </div>
-      <div class="chart-wrap h260"><canvas id="sv-q18" role="img" aria-label="Q18 chart" width="1103" height="455" style="display: block; box-sizing: border-box; height: 260px; width: 630px;"></canvas></div>
+      <div class="chart-wrap h260"><canvas id="sv-q18" role="img" aria-label="Q18 chart" width="0" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;"></canvas></div>
     </div>
   </div>
 
@@ -909,7 +889,7 @@ tbody tr:hover { background: var(--surface2); transition: background .1s; }
 </div><!-- /survey -->
 
 <!-- ══════════════════ TAB: 선생님 인터뷰 ══════════════════ -->
-<div class="tab-panel" id="tab-interview">
+<div class="tab-panel active" id="tab-interview">
   <div class="tab-source">📁 현장 교사 심층 인터뷰 · 2026.04 · 4인 (황OO·금OO·김OO·이OO 선생님)</div>
 
   <!-- 5개 핵심 인사이트 카드 -->
@@ -1023,6 +1003,7 @@ tbody tr:hover { background: var(--surface2); transition: background .1s; }
 </div><!-- /interview -->
 
 <!-- ══════════════════ TAB: 핵심 인사이트 ══════════════════ -->
+
 
 </div><!-- /content -->
 
@@ -1280,21 +1261,25 @@ function buildCompare(){
     plugins:{legend:{display:true,position:'bottom',labels:{color:'#6b7280',font:{size:10},padding:10,boxWidth:10}},tooltip:tt1},
     scales:scalesBase()}});
 
-  // 출석률+학습시간 복합
+  // 출석률+학습시간 복합 — 이중 축
   var ctx2=document.getElementById('cmp-att-time'); if(!ctx2)return;
   var tt2=tooltipBase(); tt2.mode='index'; tt2.intersect=false;
   tt2.callbacks={label:function(c){
-    var u=c.dataset.label.indexOf('학습시간')>=0?'(×10분)':'%';
+    var u=c.dataset.yAxisID==='y2'?'분':'%';
     return ' '+c.dataset.label+': '+c.raw.toFixed(1)+u;
   }};
   new Chart(ctx2,{type:'line',data:{labels:MONTHS,datasets:[
-    {label:'초등 출석률',data:elemData.att,borderColor:ORANGE,backgroundColor:'transparent',tension:0.4,borderWidth:2,pointRadius:3},
-    {label:'중등 출석률',data:midData.att,borderColor:BLUE,backgroundColor:'transparent',tension:0.4,borderWidth:2,pointRadius:3},
-    {label:'초등 학습시간÷10',data:elemData.time.map(function(v){return v/10;}),borderColor:ORANGE,backgroundColor:'transparent',tension:0.4,borderWidth:1.5,borderDash:[4,3],pointRadius:2},
-    {label:'중등 학습시간÷10',data:midData.time.map(function(v){return v/10;}),borderColor:BLUE,backgroundColor:'transparent',tension:0.4,borderWidth:1.5,borderDash:[4,3],pointRadius:2}
+    {label:'초등 출석률',data:elemData.att,borderColor:ORANGE,backgroundColor:'transparent',tension:0.4,borderWidth:2,pointRadius:3,yAxisID:'y'},
+    {label:'중등 출석률',data:midData.att,borderColor:BLUE,backgroundColor:'transparent',tension:0.4,borderWidth:2,pointRadius:3,yAxisID:'y'},
+    {label:'초등 학습시간',data:elemData.time,borderColor:ORANGE,backgroundColor:'transparent',tension:0.4,borderWidth:1.5,borderDash:[4,3],pointRadius:2,yAxisID:'y2'},
+    {label:'중등 학습시간',data:midData.time,borderColor:BLUE,backgroundColor:'transparent',tension:0.4,borderWidth:1.5,borderDash:[4,3],pointRadius:2,yAxisID:'y2'}
   ]},options:{responsive:true,maintainAspectRatio:false,
     plugins:{legend:{display:true,position:'bottom',labels:{color:'#6b7280',font:{size:10},padding:8,boxWidth:10}},tooltip:tt2},
-    scales:scalesBase()}});
+    scales:{
+      x:{ticks:{color:'#6b7280',font:{size:10}},grid:{color:gridColor}},
+      y:{position:'left',min:0,max:100,ticks:{color:'#6b7280',font:{size:10},callback:function(v){return v+'%'}},grid:{color:gridColor},title:{display:true,text:'출석률(%)',color:'#6b7280',font:{size:10}}},
+      y2:{position:'right',min:0,max:1200,ticks:{color:'#6b7280',font:{size:10},callback:function(v){return v+'분'}},grid:{drawOnChartArea:false},title:{display:true,text:'학습시간(분)',color:'#6b7280',font:{size:10}}}
+    }}});
 
   // 구간 분포 바
   var tt3=tooltipBase(); tt3.mode='index'; tt3.intersect=false;
