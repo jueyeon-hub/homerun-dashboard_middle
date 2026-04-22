@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<!-- saved from url=(0196)file:///C:/Users/juyeon/Downloads/%EC%A4%91%EB%93%B1_%ED%99%88%EB%9F%B0_%EC%A2%85%ED%95%A9_%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C_260421_%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%ED%8F%AC%ED%95%A8_3.html -->
+<!-- saved from url=(0047)file:///C:/Users/juyeon/Downloads/index_13.html -->
 <html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>중등 홈런 종합 대시보드</title>
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-<link href="file:///C:/Users/juyeon/Downloads/%EC%A4%91%EB%93%B1%20%ED%99%88%EB%9F%B0%20%EC%A2%85%ED%95%A9%20%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C_260421_files/css2" rel="stylesheet" media="print" onload="this.media=&#39;all&#39;">
+<link href="./중등 홈런 종합 대시보드_260421_files/css2" rel="stylesheet" media="print" onload="this.media=&#39;all&#39;">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Nanum+Square+AC:wght@400;700;800;900&display=swap" rel="stylesheet"></noscript>
-<script src="./중등 홈런 종합 대시보드_수정_files/chart.umd.min.js.다운로드"></script>
-<script src="./중등 홈런 종합 대시보드_수정_files/chartjs-plugin-datalabels.min.js.다운로드"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
 <style>
 :root {
   --bg: #F7F9FC;
@@ -1241,6 +1241,7 @@ function showTab(id,_btn){
 document.addEventListener('DOMContentLoaded',function(){
   var firstBtn=document.querySelector('.tab-btn.active');
   showTab('intro',firstBtn);
+  window.scrollTo({top:0,behavior:'instant'});
 });
 function buildCharts(id){
   if(id==='compare')     buildCompare();
